@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 import { Routes, Route } from 'react-router-dom';
-=======
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import FeaturedPrograms from './components/FeaturedPrograms';
@@ -19,7 +16,6 @@ function App() {
     <div className="min-h-screen bg-white">
       <Navigation />
       <main>
-<<<<<<< HEAD
         <Routes>
           <Route
             path="/"
@@ -39,17 +35,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Hero />} />
         </Routes>
-=======
-        <Hero />
-        <FeaturedPrograms />
-        <Testimonials />
-        <About />
-        <Programs />
-        <HigherEducation />
-        <StudyAbroad />
-        <News />
-        <Contact />
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
       </main>
       <Footer />
     </div>

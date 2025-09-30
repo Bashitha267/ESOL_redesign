@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
-<<<<<<< HEAD
 import { Link } from 'react-router-dom';
-=======
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -258,21 +255,12 @@ export default function Contact() {
                 Experience our facilities firsthand and meet our experienced instructors. Walk-ins are
                 welcome during office hours, or schedule an appointment for a personalized tour.
               </p>
-<<<<<<< HEAD
               <Link
                 to="/contact"
                 className="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors duration-200 font-semibold"
               >
                 Register for a Free Class
               </Link>
-=======
-              <a
-                href="#register"
-                className="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors duration-200 font-semibold"
-              >
-                Register for a Free Class
-              </a>
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
             </div>
           </div>
         </div>

@@ -1,8 +1,5 @@
 import { Plane, FileText, Award, Headphones as HeadphonesIcon } from 'lucide-react';
-<<<<<<< HEAD
 import { Link } from 'react-router-dom';
-=======
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
 
 export default function StudyAbroad() {
   const services = [
@@ -143,21 +140,12 @@ export default function StudyAbroad() {
             Book a free consultation with our study abroad counselors to explore your options and
             begin your application process.
           </p>
-<<<<<<< HEAD
           <Link
             to="/contact"
             className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 font-semibold shadow-lg"
           >
             Book Free Consultation
           </Link>
-=======
-          <a
-            href="#contact"
-            className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 font-semibold shadow-lg"
-          >
-            Book Free Consultation
-          </a>
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
         </div>
       </div>
     </section>

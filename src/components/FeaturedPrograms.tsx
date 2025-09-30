@@ -1,8 +1,5 @@
 import { BookOpen, Briefcase, Baby, GraduationCap } from 'lucide-react';
-<<<<<<< HEAD
 import { Link } from 'react-router-dom';
-=======
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
 
 export default function FeaturedPrograms() {
   const programs = [
@@ -12,11 +9,7 @@ export default function FeaturedPrograms() {
       description: 'Fun and engaging English programs designed for children aged 5-12, building strong language foundations through interactive activities.',
       age: 'Ages 5-12',
       color: 'bg-pink-100 text-pink-600',
-<<<<<<< HEAD
       href: '/programs',
-=======
-      href: '#programs',
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
     },
     {
       icon: BookOpen,
@@ -24,11 +17,7 @@ export default function FeaturedPrograms() {
       description: 'Comprehensive courses for teenagers and adults focusing on practical communication skills and exam preparation.',
       age: 'Ages 13+',
       color: 'bg-blue-100 text-blue-600',
-<<<<<<< HEAD
       href: '/programs',
-=======
-      href: '#programs',
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
     },
     {
       icon: Briefcase,
@@ -36,11 +25,7 @@ export default function FeaturedPrograms() {
       description: 'Business English courses tailored for working professionals to excel in corporate environments and advance their careers.',
       age: 'Professionals',
       color: 'bg-green-100 text-green-600',
-<<<<<<< HEAD
       href: '/programs',
-=======
-      href: '#programs',
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
     },
     {
       icon: GraduationCap,
@@ -48,11 +33,7 @@ export default function FeaturedPrograms() {
       description: 'Specialized training for IELTS, TOEFL, PTE, and other international English proficiency examinations.',
       age: 'All Levels',
       color: 'bg-amber-100 text-amber-600',
-<<<<<<< HEAD
       href: '/programs',
-=======
-      href: '#programs',
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
     },
   ];
 
@@ -88,45 +69,27 @@ export default function FeaturedPrograms() {
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   {program.description}
                 </p>
-<<<<<<< HEAD
                 <Link
                   to={program.href}
-=======
-                <a
-                  href={program.href}
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
                   className="inline-flex items-center text-blue-600 font-semibold text-sm hover:text-blue-700 transition-colors"
                 >
                   Learn More
                   <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-<<<<<<< HEAD
                 </Link>
-=======
-                </a>
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
               </div>
             );
           })}
         </div>
 
         <div className="mt-12 text-center">
-<<<<<<< HEAD
           <Link
             to="/programs"
             className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl"
           >
             View All Programs
           </Link>
-=======
-          <a
-            href="#programs"
-            className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl"
-          >
-            View All Programs
-          </a>
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
         </div>
       </div>
     </section>

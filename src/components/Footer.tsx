@@ -1,8 +1,5 @@
 import { GraduationCap, MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-react';
-<<<<<<< HEAD
 import { Link } from 'react-router-dom';
-=======
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
 
 export default function Footer() {
   const locations = [
@@ -12,21 +9,12 @@ export default function Footer() {
   ];
 
   const quickLinks = [
-<<<<<<< HEAD
     { name: 'About Us', to: '/about' },
     { name: 'Programs', to: '/programs' },
     { name: 'Higher Education', to: '/higher-education' },
     { name: 'Study Abroad', to: '/study-abroad' },
     { name: 'Student Portal', to: '/' },
     { name: 'News & Events', to: '/news' },
-=======
-    { name: 'About Us', href: '#about' },
-    { name: 'Programs', href: '#programs' },
-    { name: 'Higher Education', href: '#higher-education' },
-    { name: 'Study Abroad', href: '#study-abroad' },
-    { name: 'Student Portal', href: '#portal' },
-    { name: 'News & Events', href: '#news' },
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
   ];
 
   return (
@@ -62,21 +50,12 @@ export default function Footer() {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-<<<<<<< HEAD
                   <Link
                     to={link.to}
                     className="text-sm hover:text-blue-500 transition-colors"
                   >
                     {link.name}
                   </Link>
-=======
-                  <a
-                    href={link.href}
-                    className="text-sm hover:text-blue-500 transition-colors"
-                  >
-                    {link.name}
-                  </a>
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
                 </li>
               ))}
             </ul>

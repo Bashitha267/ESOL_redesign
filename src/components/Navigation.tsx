@@ -1,44 +1,23 @@
-<<<<<<< HEAD
-import { GraduationCap, Menu, X } from 'lucide-react';
-import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-=======
 import { useState } from 'react';
 import { Menu, X, GraduationCap } from 'lucide-react';
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
+import { NavLink, Link } from 'react-router-dom';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-<<<<<<< HEAD
     { name: 'Home', to: '/' },
-    { name: 'Management', to: '/about' },
-    { name: 'Examination', to: '/programs' },
-    { name: 'Stages', to: '/higher-education' },
-    { name: 'Student Life', to: '/study-abroad' },
-    { name: 'Calender', to: '/news' },
-    { name: 'Inquiry', to: '/contact' },
     { name: 'About', to: '/about' },
-
+    { name: 'Programs', to: '/programs' },
+    { name: 'Higher Education', to: '/higher-education' },
+    { name: 'Study Abroad', to: '/study-abroad' },
+    { name: 'News & Events', to: '/news' },
     { name: 'Contact', to: '/contact' },
-
   ];
 
   const linkBase = 'text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200';
   const activeClass = 'text-blue-600';
 
-=======
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Programs', href: '#programs' },
-    { name: 'Higher Education', href: '#higher-education' },
-    { name: 'Study Abroad', href: '#study-abroad' },
-    { name: 'News & Events', href: '#news' },
-    { name: 'Contact', href: '#contact' },
-  ];
-
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
   return (
     <nav className="fixed top-0 w-full bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,7 +32,6 @@ export default function Navigation() {
 
           <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
-<<<<<<< HEAD
               <NavLink
                 key={link.name}
                 to={link.to}
@@ -62,28 +40,12 @@ export default function Navigation() {
                 {link.name}
               </NavLink>
             ))}
-            {/* <Link
+            <Link
               to="/contact"
               className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
             >
               Register Now
-            </Link> */}
-=======
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
-              >
-                {link.name}
-              </a>
-            ))}
-            <a
-              href="#register"
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
-            >
-              Register Now
-            </a>
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
+            </Link>
           </div>
 
           <button
@@ -99,7 +61,6 @@ export default function Navigation() {
         <div className="md:hidden bg-white border-t">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
-<<<<<<< HEAD
               <NavLink
                 key={link.name}
                 to={link.to}
@@ -111,28 +72,11 @@ export default function Navigation() {
             ))}
             <Link
               to="/contact"
-=======
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="block text-gray-700 hover:text-blue-600 font-medium py-2"
-              >
-                {link.name}
-              </a>
-            ))}
-            <a
-              href="#register"
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
               onClick={() => setIsOpen(false)}
               className="block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 text-center font-medium"
             >
               Register Now
-<<<<<<< HEAD
             </Link>
-=======
-            </a>
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
           </div>
         </div>
       )}

@@ -1,8 +1,5 @@
 import { Clock, Calendar, TrendingUp, BookOpen } from 'lucide-react';
-<<<<<<< HEAD
 import { Link } from 'react-router-dom';
-=======
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
 
 export default function Programs() {
   const programCategories = [
@@ -156,21 +153,12 @@ export default function Programs() {
                         </ul>
                       </div>
 
-<<<<<<< HEAD
                       <Link
                         to="/contact"
                         className="block w-full text-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold"
                       >
                         Enroll Now
                       </Link>
-=======
-                      <a
-                        href="#contact"
-                        className="block w-full text-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold"
-                      >
-                        Enroll Now
-                      </a>
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
                     </div>
                   ))}
                 </div>
@@ -185,21 +173,12 @@ export default function Programs() {
             Our experienced counselors are here to help you find the perfect course based on your
             current level, goals, and schedule.
           </p>
-<<<<<<< HEAD
           <Link
             to="/contact"
             className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 font-semibold shadow-lg"
           >
             Schedule a Free Consultation
           </Link>
-=======
-          <a
-            href="#contact"
-            className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 font-semibold shadow-lg"
-          >
-            Schedule a Free Consultation
-          </a>
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
         </div>
       </div>
     </section>

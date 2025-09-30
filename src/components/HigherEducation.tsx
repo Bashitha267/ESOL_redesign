@@ -1,8 +1,5 @@
 import { GraduationCap, Target, Users, Sparkles } from 'lucide-react';
-<<<<<<< HEAD
 import { Link } from 'react-router-dom';
-=======
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
 
 export default function HigherEducation() {
   const programs = [
@@ -126,21 +123,12 @@ export default function HigherEducation() {
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3">{program.title}</h4>
                 <p className="text-gray-600 mb-6 leading-relaxed">{program.description}</p>
-<<<<<<< HEAD
                 <Link
                   to="/contact"
                   className="block w-full text-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold"
                 >
                   Learn More
                 </Link>
-=======
-                <a
-                  href="#contact"
-                  className="block w-full text-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold"
-                >
-                  Learn More
-                </a>
->>>>>>> 6a7a15f4efb28d13e4f833ead200eeb911230958
               </div>
             ))}
           </div>

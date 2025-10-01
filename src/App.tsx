@@ -1,17 +1,34 @@
-import { Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import FeaturedPrograms from './components/FeaturedPrograms';
-import Testimonials from './components/Testimonials';
+import { Route, Routes, useParams } from 'react-router-dom';
+
+// Import all your page components
 import About from './components/About';
-import Programs from './components/Programs';
-import HigherEducation from './components/HigherEducation';
-import StudyAbroad from './components/StudyAbroad';
-import News from './components/News';
+import AboutFeatures from './components/AboutFeatures';
+import BranchPage from './components/Branches'; // <-- 1. Import your BranchPage component
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Hero from './components/Hero';
+import Navigation from './components/Navigation';
+import News from './components/News';
+import Programs from './components/Programs';
+import Stages from './components/Stages';
+import StudyAbroad from './components/StudyAbroad';
 
-function App() {
+// 2. Create a wrapper component to handle the dynamic URL parameter
+function BranchPageWrapper() {
+  // useParams extracts the dynamic part of the URL (e.g., "maharagama")
+  const { branchSlug } = useParams(); 
+  // It then passes that slug as a prop to your BranchPage component
+if (typeof branchSlug !== 'string') {
+  // You can return a loading spinner, a 404 component, or null
+  return <div>Loading branch...</div>;
+}
+
+// 2. If the check passes, TypeScript knows branchSlug is a string,
+//    so you can safely render the component.
+return <BranchPage branchName={branchSlug} />;
+}
+
+export default function App() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -22,23 +39,26 @@ function App() {
             element={
               <>
                 <Hero />
-                <FeaturedPrograms />
-                <Testimonials />
+                <AboutFeatures />
+                {/* Add other homepage sections here if needed */}
               </>
             }
           />
           <Route path="/about" element={<About />} />
           <Route path="/programs" element={<Programs />} />
-          <Route path="/higher-education" element={<HigherEducation />} />
+          <Route path="/higher-education" element={<Stages />} />
           <Route path="/study-abroad" element={<StudyAbroad />} />
           <Route path="/news" element={<News />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Hero />} />
+          
+          {/* 3. Add the new dynamic route for the branches */}
+          <Route path="/branches/:branchSlug" element={<BranchPageWrapper />} />
+
+          {/* Fallback route - consider creating a dedicated 404 Not Found page */}
+          <Route path="*" element={<Hero />} /> 
         </Routes>
       </main>
       <Footer />
     </div>
   );
 }
-
-export default App;

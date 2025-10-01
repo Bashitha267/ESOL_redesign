@@ -1,153 +1,129 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowRight, Award, Users, Globe, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Award, ChevronLeft, ChevronRight, Globe, Users } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+// --- Carousel Data ---
+// Replace these with your actual images and captions
+const slides = [
+  {
+    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop',
+    caption: 'Empowering Students for a Decade'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop',
+    caption: 'Collaborative Learning Environment'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop',
+    caption: 'Internationally Recognized Programs'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop',
+    caption: 'Led by a Team of Expert Teachers'
+  },
+];
+
 export default function Hero() {
-  const slides = useMemo(
-    () => [
-      {
-        image:
-          'https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=1600',
-        headline: 'Start Your Journey Today',
-        sub: 'Interactive classes, expert instructors, proven results',
-      },
-      {
-        image:
-          'https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=1600',
-        headline: 'Learn With Confidence',
-        sub: 'Modern methods and real-world practice',
-      },
-      {
-        image:
-          'https://images.pexels.com/photos/4144222/pexels-photo-4144222.jpeg?auto=compress&cs=tinysrgb&w=1600',
-        headline: 'Achieve Your Goals',
-        sub: 'From beginners to professionals',
-      },
-    ],
-    []
-  );
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const [index, setIndex] = useState(0);
-  const timerRef = useRef<number | null>(null);
+  const prevSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
 
-  const next = () => setIndex((i) => (i + 1) % slides.length);
-  const prev = () => setIndex((i) => (i - 1 + slides.length) % slides.length);
-  const goTo = (i: number) => setIndex(i % slides.length);
-
+  const nextSlide = () => {
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+  
+  // Auto-play functionality
   useEffect(() => {
-    if (timerRef.current) window.clearInterval(timerRef.current);
-    timerRef.current = window.setInterval(() => {
-      setIndex((i) => (i + 1) % slides.length);
-    }, 5000);
-    return () => {
-      if (timerRef.current) window.clearInterval(timerRef.current);
-    };
-  }, [slides.length]);
+    const slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    return () => clearInterval(slideInterval); // Clean up the interval on component unmount
+  }, [currentIndex]);
+
 
   return (
-    <section id="home" className="pt-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Sri Lanka's Leading English Language Institute
-            </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              Master English, <span className="text-blue-600">Unlock Your Future</span>
+    <section id="home" className="pt-24 pb-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
+          
+          {/* --- Left Side: Content --- */}
+          <div className="lg:col-span-6 text-center lg:text-left">
+            <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
+              Unlock Your Future with a <span className="text-indigo-600">World-Class</span> English Education
             </h1>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Join thousands of students who have transformed their careers and lives through our
-              comprehensive English language programs. From young learners to professionals, we offer
-              tailored courses that deliver real-world results.
+            <p className="mt-6 text-lg text-gray-600">
+              As a British Council Platinum Partner, we've been empowering students across Sri Lanka for over a decade with certified courses from the University of Cambridge.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Link
-                to="/programs"
-                className="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl"
-              >
-                Explore Programs
-                <ArrowRight className="ml-2 w-5 h-5" />
+            
+            {/* Call to Action Buttons */}
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Link to="/courses" className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition-colors">
+                Explore Courses
               </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all duration-200 font-semibold"
-              >
-                Book a Free Consultation
+              <Link to="/about-us" className="inline-flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-100 transition-colors">
+                Learn More
               </Link>
             </div>
 
-            <div className="grid grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="flex justify-center mb-2">
-                  <Award className="w-8 h-8 text-blue-600" />
-                </div>
-                <p className="text-2xl font-bold text-gray-900">25+</p>
-                <p className="text-sm text-gray-600">Years Experience</p>
+            {/* Key Statistics */}
+            <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-6 text-left">
+              <div className="p-4 bg-white rounded-lg shadow-sm">
+                <Award className="h-8 w-8 text-indigo-500" />
+                <p className="mt-2 text-xl font-semibold text-gray-900">10+ Years</p>
+                <p className="text-sm text-gray-500">of Excellence</p>
               </div>
-              <div className="text-center">
-                <div className="flex justify-center mb-2">
-                  <Users className="w-8 h-8 text-blue-600" />
-                </div>
-                <p className="text-2xl font-bold text-gray-900">50,000+</p>
-                <p className="text-sm text-gray-600">Students Trained</p>
+              <div className="p-4 bg-white rounded-lg shadow-sm">
+                <Users className="h-8 w-8 text-indigo-500" />
+                <p className="mt-2 text-xl font-semibold text-gray-900">5000+</p>
+                <p className="text-sm text-gray-500">Students Empowered</p>
               </div>
-              <div className="text-center">
-                <div className="flex justify-center mb-2">
-                  <Globe className="w-8 h-8 text-blue-600" />
-                </div>
-                <p className="text-2xl font-bold text-gray-900">3</p>
-                <p className="text-sm text-gray-600">Locations</p>
+              <div className="p-4 bg-white rounded-lg shadow-sm col-span-2 sm:col-span-1">
+                <Globe className="h-8 w-8 text-indigo-500" />
+                <p className="mt-2 text-xl font-semibold text-gray-900">Platinum Partner</p>
+                <p className="text-sm text-gray-500">British Council</p>
               </div>
             </div>
           </div>
 
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[500px]">
-              {slides.map((s, i) => (
-                <img
-                  key={i}
-                  src={s.image}
-                  alt={s.headline}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-                    i === index ? 'opacity-100' : 'opacity-0'
-                  }`}
-                />
-              ))}
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
-              <div className="absolute bottom-8 left-8 right-8 text-white">
-                <p className="text-lg font-semibold mb-1">{slides[index].headline}</p>
-                <p className="text-sm opacity-90">{slides[index].sub}</p>
-              </div>
-
-              <button
-                aria-label="Previous slide"
-                onClick={prev}
-                className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button
-                aria-label="Next slide"
-                onClick={next}
-                className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-
-              <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
-                {slides.map((_, i) => (
-                  <button
-                    key={i}
-                    aria-label={`Go to slide ${i + 1}`}
-                    onClick={() => goTo(i)}
-                    className={`h-2 w-2 rounded-full ${i === index ? 'bg-white' : 'bg-white/60'}`}
-                  />
-                ))}
-              </div>
-            </div>
-            <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-xl p-6 max-w-xs hidden lg:block">
-              <p className="text-3xl font-bold text-blue-600 mb-1">95%</p>
-              <p className="text-sm text-gray-600">Student success rate in achieving their language goals</p>
+          {/* --- Right Side: Carousel --- */}
+          <div className="lg:col-span-6 mt-10 lg:mt-0">
+             <div className="relative w-full h-80 lg:h-96 rounded-2xl shadow-2xl overflow-hidden group">
+                {/* Slides Container */}
+                <div 
+                    className="w-full h-full flex transition-transform ease-in-out duration-700"
+                    style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                >
+                    {slides.map((slide, index) => (
+                        <div key={index} className="w-full h-full flex-shrink-0 bg-cover bg-center" style={{ backgroundImage: `url(${slide.image})` }}>
+                            <div className="w-full h-full bg-black bg-opacity-30 flex items-end p-6">
+                                <h3 className="text-white text-lg font-semibold">{slide.caption}</h3>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                
+                {/* Navigation Arrows */}
+                <button onClick={prevSlide} className="absolute top-1/2 left-3 -translate-y-1/2 bg-white/50 hover:bg-white/80 p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-10">
+                    <ChevronLeft className="h-6 w-6 text-gray-800" />
+                </button>
+                <button onClick={nextSlide} className="absolute top-1/2 right-3 -translate-y-1/2 bg-white/50 hover:bg-white/80 p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-10">
+                    <ChevronRight className="h-6 w-6 text-gray-800" />
+                </button>
+                
+                {/* Indicator Dots */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                    {slides.map((_, slideIndex) => (
+                        <div 
+                            key={slideIndex} 
+                            onClick={() => setCurrentIndex(slideIndex)}
+                            className={`h-2 w-2 rounded-full cursor-pointer transition-all ${currentIndex === slideIndex ? 'bg-white w-4' : 'bg-white/50'}`}
+                        />
+                    ))}
+                </div>
             </div>
           </div>
         </div>

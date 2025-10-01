@@ -1,18 +1,20 @@
+import { GraduationCap, Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { Menu, X, GraduationCap } from 'lucide-react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
     { name: 'Home', to: '/' },
-    { name: 'About', to: '/about' },
-    { name: 'Programs', to: '/programs' },
-    { name: 'Higher Education', to: '/higher-education' },
-    { name: 'Study Abroad', to: '/study-abroad' },
-    { name: 'News & Events', to: '/news' },
+    { name: 'Management', to: '/about' },
+    { name: 'Examination', to: '/programs' },
+    { name: 'Stages', to: '/higher-education' },
+    { name: 'Student Life', to: '/study-abroad' },
+    { name: 'Calender', to: '/news' },
+    { name: 'Inquiry', to: '/contact' },
     { name: 'Contact', to: '/contact' },
+
   ];
 
   const linkBase = 'text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200';
@@ -40,12 +42,7 @@ export default function Navigation() {
                 {link.name}
               </NavLink>
             ))}
-            <Link
-              to="/contact"
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
-            >
-              Register Now
-            </Link>
+        
           </div>
 
           <button
@@ -70,13 +67,7 @@ export default function Navigation() {
                 {link.name}
               </NavLink>
             ))}
-            <Link
-              to="/contact"
-              onClick={() => setIsOpen(false)}
-              className="block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 text-center font-medium"
-            >
-              Register Now
-            </Link>
+         
           </div>
         </div>
       )}

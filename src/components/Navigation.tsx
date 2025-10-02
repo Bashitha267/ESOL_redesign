@@ -7,18 +7,20 @@ export default function Navigation() {
 
   const navLinks = [
     { name: 'Home', to: '/' },
-    { name: 'Management', to: '/about' },
-    { name: 'Examination', to: '/programs' },
+    // { name: 'Management', to: '/about' },
+    // { name: 'Examination', to: '/programs' },
     { name: 'Stages', to: '/higher-education' },
-    { name: 'Student Life', to: '/study-abroad' },
-    { name: 'Calender', to: '/news' },
-    { name: 'Inquiry', to: '/contact' },
+    // { name: 'Student Life', to: '/study-abroad' },
+    // { name: 'Calender', to: '/news' },
+    // { name: 'Inquiry', to: '/contact' },
     { name: 'Contact', to: '/contact' },
-
   ];
 
-  const linkBase = 'text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200';
-  const activeClass = 'text-blue-600';
+  // --- 1. REMOVED 'text-gray-700' from this base variable ---
+  const linkBase = 'hover:text-blue-600 font-medium transition-colors duration-200';
+  const activeClassmobile = 'bg-blue-600 text-white px-4';
+  const activeClass = ' text-blue-600 px-4 py-2    ';
+
 
   return (
     <nav className="fixed top-0 w-full bg-white shadow-md z-50">
@@ -28,21 +30,24 @@ export default function Navigation() {
             <GraduationCap className="w-10 h-10 text-blue-600" />
             <div>
               <h1 className="text-2xl font-bold text-gray-900">ESOL College</h1>
-              <p className="text-xs text-gray-600">Excellence in English Education</p>
+              <p className="text-xs text-gray-600 ">Excellence in English Education</p>
             </div>
           </div>
 
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
                 to={link.to}
-                className={({ isActive }) => `${linkBase} ${isActive ? activeClass : ''}`}
+                // --- 2. APPLIED default or active color conditionally ---
+                className={({ isActive }) => 
+                  `${linkBase} ${isActive ? activeClass : 'text-gray-700 px-4'}`
+                }
               >
                 {link.name}
               </NavLink>
             ))}
-        
           </div>
 
           <button
@@ -54,6 +59,7 @@ export default function Navigation() {
         </div>
       </div>
 
+      {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden bg-white border-t">
           <div className="px-4 py-4 space-y-3">
@@ -62,12 +68,14 @@ export default function Navigation() {
                 key={link.name}
                 to={link.to}
                 onClick={() => setIsOpen(false)}
-                className={({ isActive }) => `block ${linkBase} ${isActive ? activeClass : ''} py-2`}
+                // --- 3. APPLIED the same fix here for mobile view ---
+                className={({ isActive }) => 
+                  `block py-2 ${linkBase} ${isActive ? activeClassmobile : 'text-gray-700 px-4'}`
+                }
               >
                 {link.name}
               </NavLink>
             ))}
-         
           </div>
         </div>
       )}

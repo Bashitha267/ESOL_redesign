@@ -1,4 +1,4 @@
-import { GraduationCap, MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Facebook, GraduationCap, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
@@ -9,12 +9,13 @@ export default function Footer() {
   ];
 
   const quickLinks = [
-    { name: 'About Us', to: '/about' },
-    { name: 'Programs', to: '/programs' },
-    { name: 'Higher Education', to: '/higher-education' },
-    { name: 'Study Abroad', to: '/study-abroad' },
-    { name: 'Student Portal', to: '/' },
-    { name: 'News & Events', to: '/news' },
+    { name: 'Home', to: '/' },
+    // { name: 'Programs', to: '/programs' },
+    // { name: 'Higher Education', to: '/higher-education' },
+    { name: 'Stages', to: '/higher-education' },
+    
+    // { name: 'Student Portal', to: '/' },
+    // { name: 'News & Events', to: '/news' },
   ];
 
   return (

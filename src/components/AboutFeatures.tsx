@@ -11,37 +11,37 @@ const branches = [
   {
     name: 'Maharagama',
     slug: 'maharagama',
-    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7185743?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://res.cloudinary.com/dnfbik3if/image/upload/v1759434493/new-building-elementary-school-litovel-modern-czech-republic-36984021_v87qsb.webp',
     description: 'Our main branch offering a full range of courses for all age groups.'
   },
-  {
-    name: 'Kaduwela',
-    slug: 'kaduwela',
-    image: 'https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=2070&auto=format&fit=crop',
-    description: 'Serving the community with specialized English language programs.'
-  },
-  {
-    name: 'Hanwella',
-    slug: 'hanwella',
-    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2e0?q=80&w=2070&auto=format&fit=crop',
-    description: 'Focused on beginner and intermediate level courses.'
-  },
-  {
-    name: 'Kaluaggala',
-    slug: 'kaluaggala',
-    image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop',
-    description: 'A modern facility equipped for advanced exam preparation.'
-  }
+  // {
+  //   name: 'Kaduwela',
+  //   slug: 'kaduwela',
+  //   image: 'https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=2070&auto=format&fit=crop',
+  //   description: 'Serving the community with specialized English language programs.'
+  // },
+  // {
+  //   name: 'Hanwella',
+  //   slug: 'hanwella',
+  //   image: 'https://res.cloudinary.com/dnfbik3if/image/upload/v1759434493/turkish-students-going-to-school-istanbul_djfo5o.webp',
+  //   description: 'Focused on beginner and intermediate level courses.'
+  // },
+  // {
+  //   name: 'Kaluaggala',
+  //   slug: 'kaluaggala',
+  //   image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop',
+  //   description: 'A modern facility equipped for advanced exam preparation.'
+  // }
 ];
 
 export default function AboutFeatures() {
   return (
-    <section id="about-features" className="py-20 bg-white">
+    <section id="about-features" className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* ... Section Header and Feature Cards remain the same ... */}
 
         {/* Branch Locations Section */}
-        <div className="mt-20 text-center">
+        <div className="mt-10 text-center">
             <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
                 Visit Our Branches
             </h2>

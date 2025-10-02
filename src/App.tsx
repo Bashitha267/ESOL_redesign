@@ -1,7 +1,6 @@
 import { Route, Routes, useParams } from 'react-router-dom';
 
 // Import all your page components
-import About from './components/About';
 import AboutFeatures from './components/AboutFeatures';
 import BranchPage from './components/Branches'; // <-- 1. Import your BranchPage component
 import Contact from './components/Contact';
@@ -44,7 +43,7 @@ export default function App() {
               </>
             }
           />
-          <Route path="/about" element={<About />} />
+          {/* <Route path="/about" element={<About />} /> */}
           <Route path="/programs" element={<Programs />} />
           <Route path="/higher-education" element={<Stages />} />
           <Route path="/study-abroad" element={<StudyAbroad />} />

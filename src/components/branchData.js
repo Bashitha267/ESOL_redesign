@@ -4,7 +4,7 @@ export const branchData = [
   {
     slug: 'maharagama',
     name: 'Maharagama',
-    heroImage: 'https://images.unsplash.com/photo-1591123120675-6f7f1aae4f8b?q=80&w=2070&auto=format&fit=crop', // Replace with a real branch photo
+    heroImage: 'https://res.cloudinary.com/dnfbik3if/image/upload/v1759434493/turkish-students-going-to-school-istanbul_djfo5o.webp', // Replace with a real branch photo
     description: "Conveniently placed between Maharagama and Pannipitiya, our branch is equipped with state-of-the-art classrooms and empowered by a panel of extensively trained teachers. Our dedicated administrative staff are always ready to assist students and parents.",
     features: [
       {

@@ -11,6 +11,7 @@ import News from './components/News';
 import Programs from './components/Programs';
 import Stages from './components/Stages';
 import StudyAbroad from './components/StudyAbroad';
+import Management from './components/Management';
 
 // 2. Create a wrapper component to handle the dynamic URL parameter
 function BranchPageWrapper() {
@@ -46,7 +47,7 @@ export default function App() {
           {/* <Route path="/about" element={<About />} /> */}
           <Route path="/programs" element={<Programs />} />
           <Route path="/higher-education" element={<Stages />} />
-          <Route path="/study-abroad" element={<StudyAbroad />} />
+          <Route path="/management" element={<Management />} />
           <Route path="/news" element={<News />} />
           <Route path="/contact" element={<Contact />} />
           

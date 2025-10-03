@@ -7,7 +7,7 @@ export default function Navigation() {
 
   const navLinks = [
     { name: 'Home', to: '/' },
-    // { name: 'Management', to: '/about' },
+    { name: 'Management', to: '/management' },
     // { name: 'Examination', to: '/programs' },
     { name: 'Stages', to: '/higher-education' },
     // { name: 'Student Life', to: '/study-abroad' },
